@@ -1,3 +1,3 @@
 # ns-ng-course
-Course NativeScript Angular 
+Course NativeScript Angular
 Add Initial Setup Commit
