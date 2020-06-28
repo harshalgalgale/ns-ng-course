@@ -4,8 +4,9 @@
     [(ngModel)]="challengeDescription">
 </TextField>
 <Button
+class="btn"
 (tap)="onSetChallenge()"
 text="Set Challenge">
 </Button>
-    <Label [text]="currentChallenge"></Label>
+    <Label class="title" [text]="currentChallenge"></Label>
 </StackLayout>
