@@ -1,0 +1,32 @@
+@import "../../../app.common";
+.page{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 20;
+}
+.day{
+    justify-content: center;
+    align-items: center;
+    color: $primary;
+    border-color: $primary;
+    border-width: 1;
+    border-radius: 50%;
+    width: 50;
+    height: 50;
+}
+.week-day-label{
+    color: $secondary;
+    font-weight: bold;
+    font-size: 20;
+}
+.completed{
+    background: $success;
+}
+.failed{
+    background: $failure;
+}
+.not-settable{
+    background: #ccc;
+    color: #535353;
+}

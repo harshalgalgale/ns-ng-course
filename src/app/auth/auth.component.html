@@ -1,0 +1,23 @@
+<ns-action-bar [title]="isLogin ? 'Login' : 'Signup'" [showBackButton]="false" [hasMenu]="false"></ns-action-bar>
+<StackLayout class="form" [formGroup]="form">
+  <StackLayout class="input-field">
+    <Label class="label" text="Email" [ngClass]="{invalid: !emailControlIsValid}"></Label>
+    <TextField class="input" returnKeyType="next" keyboardType="email" [autocorrect]="false"
+      autocapitalizationType="none" formControlName="email"></TextField>
+    <Label *ngIf="!emailControlIsValid" text="Please enter a valid email"></Label>
+  </StackLayout>
+  <StackLayout class="input-field">
+    <Label class="label" text="Password" [ngClass]="{invalid: !passwordControlIsValid}"></Label>
+    <TextField class="input" returnKeyType="done" [autocorrect]="false" autocapitalizationType="none" [secure]="true"
+      hint="Min 6 characters" formControlName="password" #passwordEl (returnPress)="onDone()"></TextField>
+    <Label *ngIf="!passwordControlIsValid" text="Must be 6+ characters"></Label>
+  </StackLayout>
+  <Button class="btn btn-flat" [text]="isLogin ? 'Need an account?' : 'Already a member?'" (tap)="switch()"></Button>
+
+  <!-- isEnabled is removed here just to skip "logging in" -->
+  <Button [text]="isLogin ? 'Login' : 'Signup'" class="btn btn-primary btn-rounded-lg" (tap)="onSubmit()"
+    *ngIf="!isLoading"></Button>
+  <ActivityIndicator [busy]="isLoading"></ActivityIndicator>
+  <!-- <Button [text]="isLogin ? 'Login' : 'Signup'" class="btn btn-primary btn-rounded-lg" (tap)="onSubmit()"
+    [isEnabled]="form.valid"></Button> -->
+</StackLayout>

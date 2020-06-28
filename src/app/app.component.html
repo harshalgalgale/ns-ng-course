@@ -1,6 +1,8 @@
-<!-- https://docs.nativescript.org/angular/core-concepts/angular-navigation.html#page-router-outlet -->
-<!-- <page-router-outlet></page-router-outlet> -->
-<StackLayout>
-    <ns-current-challenge></ns-current-challenge>
-
-</StackLayout>
+<RadSideDrawer>
+    <FlexboxLayout tkDrawerContent class="drawer-container">
+      <Button text="Logout" class="btn btn-primary btn-rounded-lg" [clearHistory]="true" (tap)="onLogout()"></Button>
+    </FlexboxLayout>
+    <StackLayout tkMainContent>
+      <page-router-outlet></page-router-outlet>
+    </StackLayout>
+  </RadSideDrawer>
